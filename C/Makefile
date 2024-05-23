@@ -1,6 +1,6 @@
-NAMES = Colleen Grace
+NAMES = Colleen Grace Sully
 
-SRC = Colleen.c Grace.c
+SRC = Colleen.c Grace.c Sully.c
 OBJ:= $(SRC:.c=.o)
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
@@ -16,8 +16,11 @@ Grace: Grace.o
 Colleen: Colleen.o
 	$(CC) Colleen.o -o Colleen
 
+Sully: Sully.o
+	$(CC) Sully.o -o Sully
+
 clean:
-	rm -rf $(OBJ) Grace_kid.c
+	rm -rf $(OBJ) Grace_kid.c Sully_*
 
 fclean: clean
 	rm -rf $(NAMES)
