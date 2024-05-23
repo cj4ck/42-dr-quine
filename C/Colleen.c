@@ -7,7 +7,7 @@ void foo() {
 int main() {
     //42
     foo();
-    char *program = "#include <stdio.h>%c//Hello%cvoid foo() {%c    return;%c}%c%cint main() {%c    //42%c    foo();%c    char *program = %c%s%c;%c    printf(program, 10, 10, 10, 10, 10, 10, 10, 10, 10, 34, program, 34, 10, 10, 10, 10);%c    return 0;%c}%c";
-    printf(program, 10, 10, 10, 10, 10, 10, 10, 10, 10, 34, program, 34, 10, 10, 10, 10);
+    char *program = "#include <stdio.h>%1$c//Hello%1$cvoid foo() {%1$c    return;%1$c}%1$c%1$cint main() {%1$c    //42%1$c    foo();%1$c    char *program = %2$c%3$s%2$c;%1$c    printf(program, 10, 34, program);%1$c    return 0;%1$c}%1$c";
+    printf(program, 10, 34, program);
     return 0;
 }
