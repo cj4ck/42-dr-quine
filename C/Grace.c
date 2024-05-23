@@ -1,5 +1,9 @@
 #include <stdio.h>
 
-#define MAIN int main() {char *s = "#include <stdio.h>%c%c#define MAIN int main() {char *s = %c%s%c; printf(s, 10, 10, 34, s, 34, 10, 10, 10); return 0;}%c%cMAIN%c"; printf(s, 10, 10, 34, s, 34, 10, 10, 10); return 0;}
+#define PROGRAM "#include <stdio.h>%1$c%1$c#define PROGRAM %2$c%3$s%2$c%1$c%1$c#define END return 0;%1$c%1$c#define MAIN int main() {FILE *file = fopen(%2$cGrace_kid.c%2$c, %2$cw%2$c); char *s = PROGRAM; fprintf(file, s, 10, 34, s); END}%1$c%1$cMAIN%1$c"
+
+#define END return 0;
+
+#define MAIN int main() {FILE *file = fopen("Grace_kid.c", "w"); char *s = PROGRAM; fprintf(file, s, 10, 34, s); END}
 
 MAIN
