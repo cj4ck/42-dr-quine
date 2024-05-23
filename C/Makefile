@@ -1,6 +1,6 @@
-NAMES = Colleen
+NAMES = Colleen Grace
 
-SRC = Colleen.c
+SRC = Colleen.c Grace.c
 OBJ:= $(SRC:.c=.o)
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
@@ -9,6 +9,10 @@ CFLAGS = -Wall -Wextra -Werror
 	$(CC) -c $^ $(CFLAGS) -o $@
 
 all: $(NAMES)
+
+Grace: Grace.o
+	$(CC) Grace.o -o Grace
+
 Colleen: Colleen.o
 	$(CC) Colleen.o -o Colleen
 
