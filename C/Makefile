@@ -17,7 +17,7 @@ Colleen: Colleen.o
 	$(CC) Colleen.o -o Colleen
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) Grace_kid.c
 
 fclean: clean
 	rm -rf $(NAMES)
